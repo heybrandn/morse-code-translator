@@ -11,6 +11,11 @@ lst = [0]
 word = []
 sentence = []
 finalWord = ""
+oled.text("morse code", 0, 0)
+oled.text("translator", 0, 10)
+oled.text("v1.2", 0, 20)
+oled.text(str(finalWord), 0, 40)
+oled.show()
 while inLoop:
     del lst[0]
     if lst == ['.', '.', '.', '-', '-', '-', '.', '.', '.']:
@@ -56,7 +61,7 @@ while inLoop:
     elif lst == ['-']:
         word.append("T")
     elif lst == ['.', '.', '-']:
-        word.append("T")
+        word.append("U")
     elif lst == ['.', '.', '.', '-']:
         word.append("V")
     elif lst == ['.', '-', '-']:
@@ -73,9 +78,9 @@ while inLoop:
     for y in word:
         finalWord += str(y)
         print(finalWord)
-        oled.text("code", 0, 0)
+        oled.text("morse code", 0, 0)
         oled.text("translator", 0, 10)
-        oled.text("v1.1", 0, 20)
+        oled.text("v1.2", 0, 20)
         oled.text(str(finalWord), 0, 40)
         oled.show()
     word.clear()
